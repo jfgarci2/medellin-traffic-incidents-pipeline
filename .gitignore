@@ -1,0 +1,75 @@
+# ---------------------------------------------------------------
+# 1. Datos: nunca se versionan (viven en disco local y en GCS)
+# ---------------------------------------------------------------
+data/
+base datos/
+informacion recibida/
+mxd/
+*.zip
+*.shp
+*.shx
+*.dbf
+*.prj
+*.cpg
+*.sbn
+*.sbx
+*.mxd
+*.parquet
+
+# ---------------------------------------------------------------
+# 2. Secretos y credenciales
+# ---------------------------------------------------------------
+.env
+.env.*
+!.env.example
+*.json.key
+*-sa-key.json
+gcp-credentials*.json
+
+# ---------------------------------------------------------------
+# 3. Entorno virtual de Python (lo recrea `uv sync`)
+# ---------------------------------------------------------------
+.venv/
+
+# ---------------------------------------------------------------
+# 4. Archivos generados por Python y herramientas
+# ---------------------------------------------------------------
+__pycache__/
+*.py[cod]
+.ruff_cache/
+.pytest_cache/
+.coverage
+htmlcov/
+*.egg-info/
+build/
+dist/
+.ipynb_checkpoints/
+
+# ---------------------------------------------------------------
+# 5. Archivos generados por dbt
+# ---------------------------------------------------------------
+target/
+dbt_packages/
+logs/
+.user.yml
+
+# ---------------------------------------------------------------
+# 6. Airflow local (F4)
+# ---------------------------------------------------------------
+orchestration/airflow/logs/
+orchestration/airflow/plugins/__pycache__/
+
+# ---------------------------------------------------------------
+# 7. Sistema operativo y editores
+# ---------------------------------------------------------------
+.DS_Store
+Thumbs.db
+desktop.ini
+.idea/
+~$*
+
+# ---------------------------------------------------------------
+# 8. Notas personales (la documentación del repo va en Markdown)
+# ---------------------------------------------------------------
+*.docx
+docs/interview/

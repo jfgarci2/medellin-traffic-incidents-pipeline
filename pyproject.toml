@@ -1,0 +1,37 @@
+[project]
+name = "medellin-incidentes"
+version = "0.1.0"
+description = "Pipeline incremental de incidentes de tránsito de Medellín."
+readme = "README.md"
+authors = [
+    { name = "José Fernando García Pérez", email = "jfgarci206@gmail.com" }
+]
+requires-python = ">=3.11"
+dependencies = []
+
+[build-system]
+requires = ["uv_build>=0.13.7,<0.14.0"]
+build-backend = "uv_build"
+
+[dependency-groups]
+dev = [
+    "pre-commit>=4.7.0",
+    "pytest>=9.2.0",
+    "ruff>=0.17.4",
+]
+
+[tool.ruff]
+target-version = "py311"
+line-length = 100
+src = ["src", "tests"]
+
+[tool.ruff.lint]
+select = [
+    "E",   # pycodestyle: estilo que esconde errores
+    "F",   # pyflakes: imports rotos y variables inexistentes
+    "I",   # isort: orden de imports
+    "UP",  # pyupgrade: sintaxis vieja para Python 3.11
+    "B",   # bugbear: bugs probables
+    "SIM", # simplify: código más simple con el mismo resultado
+    "T20", # flake8-print: prohíbe print en código de producción
+]
