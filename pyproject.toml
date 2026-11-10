@@ -7,7 +7,14 @@ authors = [
     { name = "José Fernando García Pérez", email = "jfgarci206@gmail.com" }
 ]
 requires-python = ">=3.11"
-dependencies = []
+dependencies = [
+    "pyarrow>=26.0.1",
+    "pyogrio>=0.13.0",
+]
+
+[project.scripts]
+ingest-incidentes = "medellin_incidentes.ingestion.shapefile_to_parquet:main"
+replay-incidentes = "medellin_incidentes.ingestion.replay:main"
 
 [build-system]
 requires = ["uv_build>=0.13.7,<0.14.0"]
